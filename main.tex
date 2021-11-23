@@ -1,0 +1,41 @@
+\documentclass{amsart}
+
+\usepackage{amsmath, amssymb}
+\usepackage{framed}
+
+\theoremstyle{definition}
+\newtheorem{ans}{問}
+\numberwithin{ans}{section}
+
+\newtheorem{mynote}{行間メモ}
+\numberwithin{mynote}{section}
+\newenvironment{note}
+  {\begin{leftbar}\begin{mynote}}
+  {\end{mynote}\end{leftbar}}
+
+\newcommand{\fakesection}[1]{%
+  \par\refstepcounter{section}% Increase section counter
+  \sectionmark{#1}% Add section mark (header)
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}% Add section to ToC
+  % Add more content here, if needed.
+}
+
+
+\begin{document}
+
+\fakesection{§1 Lebesgue (ルベーグ) 測度とは何か}
+
+
+\fakesection{§2 空間とその部分集合}
+
+\begin{ans}
+  「$x \in A \cup B$」
+  $\Leftrightarrow$
+  「$x \in A$ または $x \in B$」
+  $\Leftrightarrow$
+  「$x \in A$ または $x \in B \cap A^c$」
+  $\Leftrightarrow$
+  「$x \in A + (B \cap A^c)$」
+\end{ans}
+
+\end{document}
